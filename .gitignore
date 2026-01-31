@@ -139,3 +139,11 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Drizzle Kit
+drizzle-kit/
+drizzle-kit.lock
+
+# Drizzle
+drizzle/
+drizzle.lock
