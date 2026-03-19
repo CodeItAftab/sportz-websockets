@@ -17,8 +17,7 @@ function broadcast(wss, payload) {
 
 export function attachWebSocketServer(server) {
   const wss = new WebSocketServer({
-    server,
-    path: "/ws",
+    noServer: true,
     maxPayload: 1024 * 1024, // 1 MB
   });
 
@@ -48,11 +47,11 @@ export function attachWebSocketServer(server) {
         socket.destroy();
         return;
       }
-
-      wss.handleUpgrade(req, socket, head, (ws) => {
-        wss.emit("connection", ws, req);
-      });
     }
+
+    wss.handleUpgrade(req, socket, head, (ws) => {
+      wss.emit("connection", ws, req);
+    });
   });
 
   wss.on("connection", async (socket, req) => {
