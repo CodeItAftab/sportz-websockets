@@ -14,6 +14,7 @@ const MAX_LIMIT = 100;
 
 matchRouter.get("/", async (req, res) => {
   const parsed = listMatchesQuerySchema.safeParse(req.query);
+  console.log("Parsed query:", parsed);
   if (!parsed.success) {
     return res.status(400).json({
       error: "Invalid query parameters.",
