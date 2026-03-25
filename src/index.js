@@ -1,3 +1,6 @@
+import AgentAPI from "apminsight";
+AgentAPI.config();
+
 import http from "http";
 import express from "express";
 import matchRouter from "./routes/matches.js";
