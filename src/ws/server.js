@@ -43,8 +43,8 @@ function broadcastToMatch(matchId, payload) {
 
 function handleMessage(socket, data) {
   let message;
-  message = JSON.parse(data.toString());
   try {
+    message = JSON.parse(data.toString());
   } catch (error) {
     sendJson(socket, { type: "error", message: "Invalid JSON" });
   }
