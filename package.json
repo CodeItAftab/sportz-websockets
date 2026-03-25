@@ -25,6 +25,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "apminsight": "^5.3.1",
     "drizzle-kit": "^0.31.8"
   }
 }
